@@ -1,0 +1,22 @@
+{
+  "jsc": {
+    "target": "es2020",
+    "parser": {
+      "syntax": "typescript"
+    },
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "exclude": ".*.test.ts$",
+  "module": {
+    "type": "commonjs"
+  },
+  "env": {
+    "targets": {
+      "node": "16"
+    }
+  },
+  "sourceMaps": true
+}

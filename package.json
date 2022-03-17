@@ -1,0 +1,54 @@
+{
+  "name": "template-node",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "author": "Tyler Stewart <git@tylerstewart.ca>",
+  "license": "MIT",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "nodemon",
+    "build": "swc ./src -d dist",
+    "types": "tsc --emitDeclarationOnly",
+    "test": "jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^16.0.1",
+    "@commitlint/config-conventional": "^16.0.0",
+    "@swc/cli": "^0.1.55",
+    "@swc/core": "^1.2.127",
+    "@swc/jest": "^0.2.15",
+    "@types/jest": "^27.4.0",
+    "@types/node": "^17.0.8",
+    "husky": "^7.0.4",
+    "jest": "^27.4.7",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.4.0",
+    "tsconfig-paths": "^3.12.0",
+    "typescript": "^4.5.4"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(t|j)sx?$": "@swc/jest"
+    }
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "ts,json",
+    "ignore": [
+      "**/*.test.ts"
+    ],
+    "exec": "yarn ts-node ./src/index.ts"
+  },
+  "volta": {
+    "node": "16.13.1",
+    "yarn": "1.22.17"
+  }
+}
